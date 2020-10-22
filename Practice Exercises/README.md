@@ -6,3 +6,4 @@ Simple code exercises to improve proficiency in various programming languages an
 | Domain Focus | Exercise Name | Solution File(s) |
 | :-- | :-- | :-- |
 | Python | [Creating and Indexing Lists](https://teamtreehouse.com/library/practice-creating-and-indexing-lists) | [team.py](team.py) |
+| Python | [Solution - Wikipedia Links](https://teamtreehouse.com/library/dates-and-times-in-python/dates-and-times/wikipedia-links) | [wiki_date_search.py](wiki_date_search.py) |
