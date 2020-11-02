@@ -34,16 +34,16 @@ def menu_loop():
     while choice != "q":
         clear()
         print("Enter 'q' to quit.")
-        for key, value in menu.items():
+        for key, value in main_menu.items():
             print(f"{key}) {value.__doc__}")
         print()
         choice = input("Action: ").lower().strip()
         print()
         print()
         
-        if choice in menu:
+        if choice in main_menu:
             clear()
-            menu[choice]()
+            main_menu[choice]()
     
     
 def add_entry():
@@ -70,9 +70,8 @@ def view_entries(search_query=None):
         print("="*len(timestamp))
         print(entry.content)
         print("\n\n" + "="*len(timestamp))
-        print("n) next entry")
-        print("d) delete entry")
-        print("q) return to main menu")
+        for key, value in entry_submenu.items():
+            print(f"{key}) {value}")
         
         next_action = input("Action: [n/d/q] ").lower().strip()
         if next_action == "q":
@@ -94,13 +93,18 @@ def delete_entry(entry):
         print()
     
     
-menu = OrderedDict([
+main_menu = OrderedDict([
     ("a", add_entry),
     ("v", view_entries),
     ("s", search_entries),
     ("d", delete_entry)
 ])
 
+entry_submenu = OrderedDict([
+    ("n", "next entry"),
+    ("d", "delete entry"),
+    ("q", "return to main menu")
+])
     
 if __name__ == "__main__":
     initialize()
