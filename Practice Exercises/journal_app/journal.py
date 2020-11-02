@@ -4,6 +4,7 @@ from collections import OrderedDict
 import datetime
 import os
 import sys
+import time
 
 from peewee import *
 
@@ -55,6 +56,7 @@ def add_entry():
         if input("Save entry? [y/n] ").lower() != "n":
             Entry.create(content=data)
             print("Saved successfully!")
+            time.sleep(3)
     
     
 def view_entries(search_query=None):
@@ -90,7 +92,7 @@ def delete_entry(entry):
     if input("Are you sure? [y/N] ").lower() == "y":
         entry.delete_instance()
         print("Entry deleted!")
-        print()
+        time.sleep(3)
     
     
 main_menu = OrderedDict([
